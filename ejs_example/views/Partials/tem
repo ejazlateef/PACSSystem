@@ -1,0 +1,169 @@
+using System;
+using System.Net;
+using System.Web;
+using System.Linq;
+using System.Web.Mvc;
+using System.Collections.Generic;
+
+using Newtonsoft.Json;
+using iBancs360.ViewModel;
+using iBancs360.Encryption;
+using iBancs360.BusinessModel;
+using iBancs360.BusinessModel.Helpers;
+using iBancs360.BusinessModel.Repositories;
+using iBancs360.DataModel.Model;
+using System.Globalization;
+
+namespace iBancs360.Portal.Controllers
+{
+    public class LifeController : BaseController
+    {
+
+        public ActionResult ChangeCurrentCulture(string code)
+        {
+            CultureHelper.CurrentCulture = code;
+            Session["CurrentCulture"] = code;
+            return Redirect(Request.Url.AbsoluteUri);
+        }
+
+
+        #region Life Insurance
+
+
+        public ActionResult LifeInsurance()
+        {
+            return View();
+        }
+
+
+        #endregion
+
+
+        #region Life Savings
+
+        public ActionResult SavingsPlan()
+        {
+           
+
+            iBancsRestClient restClient = new iBancsRestClient();
+            SurveyViewModel productSurvey = restClient.ExecuteRequest<SurveyViewModel>("Survey/GetProductSurveyByProductCategory", "productCategory=LS");
+            if (productSurvey == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (productSurvey.Language != CultureHelper.CurrentCulture)
+            {
+                ChangeCurrentCulture(productSurvey.Language);
+            }
+
+            return View(productSurvey);
+
+        }
+        #endregion
+
+        #region Term life results
+
+        public ActionResult TermLifeResults(LifeInsuranceFilterViewModel filter)
+        {
+            string Gender;
+            string smoker;
+            DateTime DOB;
+            string CustomerName;
+            string mobile;
+            string email;
+            double CoverAmount;
+            string Terms;
+            
+
+            Gender = Request.Form["gender"].ToString();
+            smoker = Request.Form["smoker"].ToString();
+            DOB = Convert.ToDateTime(Request.Form["DOB"].ToString());
+            CoverAmount = Convert.ToDouble(Request.Form["cover"]);
+            Terms = Request.Form["term"].ToString();
+            CustomerName = Request.Form["cname"].ToString();
+            mobile = Request.Form["mobile"].ToString();
+            email = Request.Form["email"].ToString();
+
+            
+            iBancsRestClient restClient = new iBancsRestClient();
+            bool status = restClient.ExecuteRequest<bool>("Customer/GetDuplicateCustomer", "emailAddress=" + email + "&mobile=" + mobile);
+            if (status==false)
+            {
+                //Add this customer
+                PersonViewModel viewModel = new PersonViewModel();
+                viewModel.CustomerFullName = CustomerName;
+                viewModel.MobileNumber = mobile;
+                viewModel.ContactEmail = email;
+                viewModel.Gender = Gender;
+                viewModel.DateOfBirth =DOB;
+                viewModel.IsKYC = false;
+                viewModel.CreatedDate = DateTime.Now;
+                // Need to change this login
+                viewModel.CustomerTypeId = new Guid("904AEEBC-CA48-49F8-8F04-FAD10C467D41");
+                viewModel.AgencyID = new Guid("520BCDAB-4D50-4EB6-B7C1-C04D3EF9AB41");
+                // end
+               // Guid PersonGuid = restClient.SaveRequest<Guid>("Customer/SavePerson", viewModel);
+                
+            }
+            // Fetch information from 
+            
+
+            return View();
+        }
+        #endregion
+
+
+    }
+}
+
+
+
+
+
+
+
+select * from tblUserLoginHistory
+order by LoginDate desc
+
+
+delete tblUserLoginHistory
+where LoginHistoryId='47C6291F-102D-4DD8-A940-27A2F0AF66FB'
+
+
+select * from tblGAgencyTenants
+
+select * from tblAuditTrail
+order by 1 desc
+
+select * from tblSurveyProductCategory
+
+select * from tblSurvey
+
+select * from tblInsuranceProductCategory
+
+select * from tblCustomerInfo
+order by 1 desc
+
+select * from tblCustomerInfo
+where ContactEmail='a@a.com'
+
+select * from tblCustomerType
+
+select * from tblProductLifeTariff 
+
+
+select * from tblCustomerType
+
+
+
+
+
+
+"MobileNumber" = mobile + "&Gender=" + Gender
+                    DateOfBirth = DOB,
+                    IsKYC = false,
+                    CreatedDate = DateTime.Now,
+
+                    CustomerTypeId = customerTypeId,
+                    AgencyID = Global.LoggedInUserTenantID

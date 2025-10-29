@@ -1,0 +1,309 @@
+<%- contentFor('HeaderCss') %>
+<!-- Page-specific CSS if needed -->
+<%- contentFor('body') %>
+
+<!-- Start content -->
+
+
+<div class="content">
+  <div class="container-fluid">
+
+    <!-- Page Title -->
+   
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-title-box">
+          <h4 class="page-title" style="display: inline-block;">View Radiologist Documents</h4>
+          <!-- Save button at the top right -->
+          <div style="display: inline-block; float: right;">
+            <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Form Section -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card m-b-20">
+          <div class="card-body">
+            <form>
+              <!-- Document Information Section -->
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" style="font-size: 14px;">Document Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter document name" value="Medical Degree Certificate" disabled style="font-size: 14px;">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" style="font-size: 14px;">Multi File Uploaded</label>
+                  <input type="file" class="form-control" value="C:\abc.JPG" disabled style="font-size: 14px;">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" style="font-size: 14px;">Expiry Date</label>
+                  <input type="date" class="form-control" value="2025-09-20" disabled style="font-size: 14px;">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" style="font-size: 14px;">Status</label>
+                  <input type="text" class="form-control text-danger" value="Pending" disabled style="font-size: 14px;"> <!-- Status Field with Red Text -->
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" style="font-size: 14px;">Remarks</label>
+                  <input type="text" class="form-control" value="Document uploaded successfully on date 2025-09-20" disabled style="font-size: 14px;">
+                </div>
+              </div>
+
+              <!-- Admin and Reviewer Notifications Section -->
+              <div class="mb-4">
+                <h4 class="page-title" style="font-size: 20px; margin-bottom: 10px;">Notifications</h4>
+                <div class="content">
+                  <div class="container-fluid">
+                    <!-- Ticket List Section -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card m-b-20">
+                          <div class="card-body">
+                            <!-- Add Notification Button/Icon -->
+                            <div class="d-flex justify-content-end mb-3">
+  <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-lg">
+    <i class="fa fa-plus"></i> Add Notification
+  </button>
+</div>
+
+                            <!-- Support Ticket List -->
+                            <div class="ticket-list">
+                              <!-- Ticket Item 1 -->
+                              <div class="ticket-item d-flex align-items-center border p-3 mb-3" style="font-size: 14px;">
+                                <i class="ion-person" style="font-size: 24px; color: #007bff;c: 10px;"></i>
+                                <div class="ticket-info flex-grow-1">
+                                  <span class="ticket-id" style="font-weight: bold;">#89754</span> 
+                                  <span class="ticket-title" style="font-size: 16px;">Document Expiry Notice</span>
+                                  <p class="ticket-description" style="font-size: 14px; color: #6c757d;">"  Hi, Your ID Card will Expiry on 20-12-2025..."</p>
+                                </div>
+                                <div class="ticket-meta">
+                                  <span class="ticket-created" style="font-size: 12px; color: #6c757d;">Created by Reviewer (Ejaz) - 1 day ago</span>
+                                  <span class="ticket-status badge badge-warning" style="font-size: 14px;">Request Resubmission</span>
+                                </div>
+                              </div>
+
+                              <!-- Ticket Item 2 -->
+                              <div class="ticket-item-list">
+  <!-- Ticket Item 1 (Profile Verification) -->
+  <div class="ticket-item d-flex align-items-center border p-3 mb-3" style="font-size: 14px;">
+    <i class="ion-person" style="font-size: 24px; color: #007bff; margin-right: 10px;"></i>
+    <div class="ticket-info flex-grow-1">
+      <span class="ticket-id" style="font-weight: bold;">#57854</span>
+      <span class="ticket-title" style="font-size: 16px;">Profile Verification Completed</span>
+      <p class="ticket-description" style="font-size: 14px; color: #6c757d;">Your employment details have been successfully verified....</p>
+    </div>
+    <div class="ticket-meta">
+      <span class="ticket-created" style="font-size: 12px; color: #6c757d;">Created by Ejaz (Reviewer) - 2 days ago</span>
+      <span class="ticket-status badge badge-success" style="font-size: 14px;">Approve</span>
+    </div>
+  </div>
+
+  <!-- Ticket Item 2 (Resubmission Request) -->
+  <div class="ticket-item d-flex align-items-center border p-3 mb-3" style="font-size: 14px;">
+    <i class="ion-person" style="font-size: 24px; color: #007bff; margin-right: 10px;"></i>
+    <div class="ticket-info flex-grow-1">
+      <span class="ticket-id" style="font-weight: bold;">#85784</span>
+      <span class="ticket-title" style="font-size: 16px;">Please upload clearer copy?</span>
+      <p class="ticket-description" style="font-size: 14px; color: #6c757d;">Please upload a clearer copy of your ID document....</p>
+    </div>
+    <div class="ticket-meta">
+      <span class="ticket-created" style="font-size: 12px; color: #6c757d;">Created by Ejaz (Reviewer) - 2 days ago</span>
+      <span class="ticket-status badge badge-warning" style="font-size: 14px;">Request Resubmission</span>
+    </div>
+  </div>
+
+  <!-- Ticket Item 3 (Template Page Load Issue) -->
+  <div class="ticket-item d-flex align-items-center border p-3 mb-3" style="font-size: 14px;">
+    <i class="ion-person" style="font-size: 24px; color: #007bff; margin-right: 10px;"></i>
+    <div class="ticket-info flex-grow-1">
+      <span class="ticket-id" style="font-weight: bold;">#25874</span>
+      <span class="ticket-title" style="font-size: 16px;">About template page load</span>
+      <p class="ticket-description" style="font-size: 14px; color: #6c757d;">Hi, Ejaz, can you work on increasing the Img size...</p>
+    </div>
+    <div class="ticket-meta">
+      <span class="ticket-created" style="font-size: 12px; color: #6c757d;">Created by Ejaz (Radiologist) - 20 days ago</span>
+      <span class="ticket-status badge badge-warning" style="font-size: 14px;">Request Resubmission</span>
+    </div>
+  </div>
+
+  <!-- Ticket Item 4 (Another Request Resubmission) -->
+  <div class="ticket-item d-flex align-items-center border p-3 mb-3" style="font-size: 14px;">
+    <i class="ion-person" style="font-size: 24px; color: #007bff; margin-right: 10px;"></i>
+    <div class="ticket-info flex-grow-1">
+      <span class="ticket-id" style="font-weight: bold;">#99988</span>
+      <span class="ticket-title" style="font-size: 16px;">Missing Document (Compulsory)</span>
+      <p class="ticket-description" style="font-size: 14px; color: #6c757d;">Please upload your work experience letter as it is compulsory.</p>
+    </div>
+    <div class="ticket-meta">
+      <span class="ticket-created" style="font-size: 12px; color: #6c757d;">Created by Ejaz (Reviewer) - 3 days ago</span>
+      <span class="ticket-status badge badge-danger" style="font-size: 14px;">Rejected</span>
+    </div>
+  </div>
+</div>
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal for Add Notification -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-0" id="myLargeModalLabel">Add Notification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- Title Field -->
+          <div class="mb-3">
+            <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="title" placeholder="Please upload clearer copy" required>
+          </div>
+
+          <!-- Message Field -->
+          <div class="mb-3">
+            <label for="message" class="form-label">Message / Description <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="message" placeholder="Enter your message here" rows="4" required></textarea>
+          </div>
+
+          <!-- Attachment Field -->
+          <div class="mb-3">
+            <label for="attachment" class="form-label">Attachment (optional)</label>
+            <input type="file" class="form-control" id="attachment">
+          </div>
+
+          <!-- Button Row -->
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary w-25">Save Notification</button>
+            <button type="button" class="btn btn-outline-secondary ms-2" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<% include ../Partials/FooterRoot %>
+<%- contentFor('FooterJs') %>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Optional: Add custom styles for different ticket statuses -->
+<style>
+  .ticket-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .ticket-status.feature {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .ticket-status.bug {
+    background-color: #ffc107;
+    color: black;
+  }
+
+  .ticket-status.query {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .ticket-status.enhancement {
+    background-color: #17a2b8;
+    color: white;
+  }
+
+  .ticket-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 20px; /* Increase padding for more spacious layout */
+  }
+
+  .ticket-id {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .ticket-title {
+    font-size: 16px;
+  }
+
+  .ticket-description {
+    font-size: 14px;
+    color: #6c757d;
+  }
+
+  .ticket-meta {
+    text-align: right;
+  }
+
+  .ticket-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .ticket-created {
+    font-size: 12px;
+    color: #6c757d;
+  }
+
+  /* Ion-person icon styling */
+  .ticket-info i.ion-person {
+    font-size: 24px;
+    color: #007bff; /* Blue color */
+    margin-right: 10px;
+  }
+
+  /* Style for the Add Notification button */
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  /* Adjust padding and margin */
+  .ticket-item {
+    padding: 15px 20px; /* Increase padding */
+  }
+
+  .ticket-meta {
+    margin-left: auto; /* Align the meta info to the right */
+  }
+</style>

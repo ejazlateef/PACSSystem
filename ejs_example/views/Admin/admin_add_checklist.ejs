@@ -1,0 +1,114 @@
+<%- contentFor('HeaderCss') %>
+<!-- Page-specific CSS (use existing theme only) -->
+<%- contentFor('body') %>
+
+<!-- Start content -->
+<div class="content">
+  <div class="container-fluid">
+
+    <!-- Page Title with Save Button -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-title-box">
+          <h4 class="page-title" style="display: inline-block;">Add Checklist Item</h4>
+          <!-- Save button at the top right -->
+          <div style="display: inline-block; float: right;">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Form Section -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card m-b-20">
+          <div class="card-body">
+            <form>
+
+              <!-- Checklist Item Description -->
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Checklist Item Description <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter checklist description" value="Applicant’s name matches ID document" required>
+                </div>
+
+                <!-- Compulsory for review Switch -->
+                <div class="col-md-6">
+                  <div class="mb-3 d-flex align-items-center">
+                    <label class="form-label me-3">Compulsory for review</label>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input"style="margin-top:-8px;margin-left: 10px;" type="checkbox" id="compulsoryForReview" checked>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- Order / Sequence -->
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Order / Sequence <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" value="10" required>
+                  </div>
+                </div>
+
+                <!-- Multiple Pages Switch -->
+                <div class="col-md-6">
+                  <div class="mb-3 d-flex align-items-center">
+                    <label class="form-label me-3">Multiple Pages</label>
+                    <div class="form-check form-switch">
+                      <input class="form-check-input"style="margin-top:-10px;margin-left: 10px;" type="checkbox" id="multiplePages">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- contentFor('FooterJs') %>
+
+<!-- Optional: Add custom CSS -->
+<style>
+  .form-control {
+    font-size: 14px; /* Adjust font size for form fields */
+  }
+
+  .btn-primary {
+    font-size: 14px; /* Adjust button text size */
+  }
+
+  .page-title-box {
+    padding-right: 30px; /* Adjust padding for title box */
+  }
+
+  /* Adjust layout for two columns */
+  .col-md-6 {
+    margin-bottom: 1.5rem; /* Add bottom margin for better spacing */
+  }
+
+  .form-check-input {
+    width: 40px; /* Set size for the switch toggle */
+    height: 20px;
+  }
+
+  .form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Add extra spacing for form elements */
+  .mb-3 {
+    margin-bottom: 1rem;
+  }
+</style>
+
+

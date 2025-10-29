@@ -1,0 +1,209 @@
+<%- contentFor('HeaderCss') %>
+<!-- Page-specific CSS -->
+
+<%- contentFor('body') %>
+
+<!-- Start content -->
+<% include ../Partials/HeaderRoot %>
+
+<div class="content">
+  <div class="container-fluid">
+
+    
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-title-box">
+          <h4 class="page-title" style="display: inline-block;">Add Tenant (Organization / Hospital)</h4>
+          <!-- Save button at the top right -->
+          <div style="display: inline-block; float: right;">
+            <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card m-b-20">
+          <div class="card-body">
+
+            <form action="/tenant/save" method="POST">
+              <!-- General Info -->
+              <h5 class="mb-3">General Information</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Tenant Name <span class="text-danger">*</span></label>
+                  <input type="text" name="tenant_name" class="form-control" placeholder="ABC Hospital" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Tenant Code <span class="text-danger">*</span></label>
+                  <input type="text" name="tenant_code" class="form-control" placeholder="HILTON123" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+  <label class="form-label">Industry Type <span class="text-danger">*</span></label>
+  <select name="industry_type" class="form-select form-control" multiple="multiple" required>
+    <option value="Radiology">Radiology</option>
+    <option value="Hospital">Hospital</option>
+    <option value="Diagnostic Center">Diagnostic Center</option>
+    <option value="Clinic">Clinic</option>
+</select>
+
+</div>
+
+
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Website</label>
+                  <input type="text" name="website_url" class="form-control" placeholder="https://www.hospital.com">
+                </div>
+              </div>
+
+              <!-- Contact Info -->
+              <h5 class="mb-3 mt-4">Contact Information</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Contact Person Name <span class="text-danger">*</span></label>
+                  <input type="text" name="contact_person_name" class="form-control" placeholder="Dr. John Doe" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Contact Email <span class="text-danger">*</span></label>
+                  <input type="email" name="contact_email" class="form-control" placeholder="admin@hospital.com" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Contact Phone <span class="text-danger">*</span></label>
+                  <input type="text" name="contact_phone" class="form-control" placeholder="+92 300 1234567" required>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <h5 class="mb-3 mt-4">Address Details</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Address Line 1 <span class="text-danger">*</span></label>
+                  <input type="text" name="address_line1" class="form-control" placeholder="123 Main Street" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Address Line 2</label>
+                  <input type="text" name="address_line2" class="form-control" placeholder="Building or Area">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">City <span class="text-danger">*</span></label>
+                  <input type="text" name="city" class="form-control" placeholder="Karachi" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">State</label>
+                  <input type="text" name="state" class="form-control" placeholder="Sindh">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Country <span class="text-danger">*</span></label>
+                  <select name="country" class="form-select form-control" required>
+                    <option selected>Pakistan</option>
+                    <option>UAE</option>
+                    <option>USA</option>
+                    <option>Australia</option>
+                    <option>UK</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Postal Code</label>
+                  <input type="text" name="postal_code" class="form-control" placeholder="74000">
+                </div>
+              </div>
+
+              <!-- Configuration -->
+              <h5 class="mb-3 mt-4">Configuration</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Default Language</label>
+                  <select name="default_language" class="form-select form-control">
+                    <option>English</option>
+                    <option>Arabic</option>
+                    <option>Urdu</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Timezone</label>
+                  <select name="default_timezone" class="form-select form-control">
+                    <option>Asia/Karachi</option>
+                    <option>Asia/Dubai</option>
+                    <option>America/New_York</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Currency</label>
+                  <select name="currency_code" class="form-select form-control">
+                    <option>PKR</option>
+                    <option>AED</option>
+                    <option>USD</option>
+                    <option>GBP</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Date Format</label>
+                  <select name="date_format" class="form-select form-control">
+                    <option>DD-MM-YYYY</option>
+                    <option>MM-DD-YYYY</option>
+                    <option>YYYY-MM-DD</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Subscription -->
+              <h5 class="mb-3 mt-4">Subscription / License</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Plan Type</label>
+                  <select name="plan_type" class="form-select form-control">
+                    <option>Free</option>
+                    <option>Standard</option>
+                    <option>Enterprise</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Max Users</label>
+                  <input type="number" name="max_users" class="form-control" placeholder="50">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Storage Limit (MB)</label>
+                  <input type="number" name="storage_limit_mb" class="form-control" placeholder="5000">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Plan Start Date</label>
+                  <input type="date" name="plan_start_date" class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Plan Expiry Date</label>
+                  <input type="date" name="plan_expiry_date" class="form-control">
+                </div>
+              </div>
+
+              
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<%- contentFor('FooterJs') %> 

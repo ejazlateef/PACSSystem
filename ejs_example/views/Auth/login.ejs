@@ -1,0 +1,78 @@
+<% include ../Partials/HeaderRoot %>
+
+    <div class="wrapper-page"
+        style="background-image: url('http://202.141.232.117:88/assets/hilton_repl/images/motto-bg.jpeg'); background-size: cover; background-position: center;">
+
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="text-center m-0">
+                    <a href="/" class="logo logo-admin d-flex align-items-center justify-content-center">
+                        <i class="mdi mdi-hospital-building"
+                            style="color: red; font-size: 40px; margin-right: 8px;"></i>
+                        <span style="font-weight: bold; font-size: 32px; color: #333;">ITS</span>
+                    </a>
+                </h3>
+
+                <div class="p-3">
+                    <form class="form-horizontal m-t-30" action="pages-radiologist-list">
+
+                        <div class="form-group">
+                            <label for="username">Email or Phone Number</label>
+                            <input type="text" class="form-control" id="username"
+                                placeholder="Enter email or phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userpassword">Password</label>
+                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                        </div>
+
+                        <div class="form-group row m-t-20">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                </div>
+                            </div>
+                            <div class="col-6 text-right">
+                                <button class="btn btn-danger w-md waves-effect waves-light" type="submit" onclick="window.location.href='/pages-radiologist-list'">
+    Sign In
+</button>
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="/forgot-password" class="text-muted">
+                                <i class="mdi mdi-lock"></i> Forgot Your Password?
+                            </a>
+                            <a href="/pages-registration" class="text-primary font-weight-bold">
+                                Sign Up as Radiologist
+                            </a>
+                        </div>
+
+
+                        <hr>
+
+                        <div class="text-center">
+                            <p>Or login with</p>
+                            <a href="/auth/google" class="btn btn-outline-danger m-1">
+                                <i class="fab fa-google"></i> Login with Google
+                            </a>
+                            <a href="/auth/facebook" class="btn btn-outline-primary m-1">
+                                <i class="fab fa-facebook-f"></i> Login with Facebook
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="m-t-40 text-center"></div>
+
+    </div>
+
+    <% include ../Partials/FooterRoot %>

@@ -1,0 +1,245 @@
+<%- contentFor('HeaderCss') %>
+<!-- Page-specific CSS -->
+
+<%- contentFor('body') %>
+
+<!-- Start content -->
+<div class="content">
+  <div class="container-fluid">
+
+    <!-- Title for Radiologist Dashboard -->
+    <div class="row">
+  <div class="col-sm-12">
+    <div class="page-title-box">
+      <h4 class="page-title" style="display: inline-block;">Radiologist Dashboard</h4> <!-- Added title -->
+      <!-- Added Verification Pending status -->
+      <span class="badge badge-danger" style="margin-left: 10px;">Verification Pending</span> 
+    </div>
+  </div>
+</div>
+
+
+    <!-- Page Title and Save Button -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-title-box">
+          <h4 class="page-title" style="display: inline-block;">Personal Information</h4>
+          <!-- Save button at the top right -->
+          <div style="display: inline-block; float: right;">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start main content card -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card m-b-20">
+          <div class="card-body">
+
+            <!-- Radiologist Information -->
+            <form>
+              <!-- Full Name and Organization -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter your full name" value="Ali Khan Muhammad Ali" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Radiologist’s Organization <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter your organization" value="ABC Lab" required>
+                </div>
+              </div>
+
+              <!-- Phone Number and Email -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" placeholder="Enter your phone number" value="+923212492137" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" placeholder="Enter your email" value="ali.khna@gmail.com" required>
+                </div>
+              </div>
+
+              <!-- Country and City -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Country <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" value="USA" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">City <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" value="New York" required>
+                </div>
+              </div>
+
+              <!-- Date of Birth and Add Avatar (same row) -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Add Avatar</label>
+                  <input type="file" class="form-control" accept="image/*">
+                </div>
+              </div>
+
+              <!-- Gender and Modalities (on the same row) -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Gender <span class="text-danger">*</span></label>
+                  <select class="form-select form-control"  required>
+                    <option selected>Male</option>
+                    <option>Female</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Modalities <span class="text-danger">*</span></label>
+                  <select class="form-select form-control" required>
+                    <option selected>CT Scan</option>
+                    <option>X-Ray</option>
+                    <option>MRI</option>
+                    <option>Ultrasound</option>
+                    <option>Others</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Experience Section -->
+              <hr>
+              <div class="d-flex justify-content-between align-items-center">
+                <h5>Radiologist Experience</h5>
+                <a href="/pages-radiologist-add-experience" class="btn btn-primary btn-sm">Add Experience</a>
+              </div>
+
+              <div class="table-responsive mt-3">
+                <table class="table table-striped table-bordered">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Organisation Name</th>
+                      <th>Job Title</th>
+                      <th>Year Start</th>
+                      <th>Year End</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% const experiences = [
+                      { org: 'ACC Hospital', title: 'Radiologist', start: '2015', end: '2020' },
+                      { org: 'City Medical Center', title: 'Radiologist', start: '2020', end: '2023' },
+                      { org: 'MediCare Imaging', title: 'Consultant Radiologist', start: '2023', end: '2023' },
+                      { org: 'MetroCare Hospital', title: 'Chief Radiologist', start: '2021', end: 'Present' }
+                    ]; %>
+                    <% experiences.forEach(exp => { %>
+                      <tr>
+                        <td><%= exp.org %></td>
+                        <td><%= exp.title %></td>
+                        <td><%= exp.start %></td>
+                        <td><%= exp.end %></td>
+                        <td>
+                          <a href="#" class="text-primary"><i class="mdi mdi-pencil"></i></a>
+                          <a href="#" class="text-danger ml-2"><i class="mdi mdi-delete"></i></a>
+                          <a href="#" class="text-secondary ml-2"><i class="mdi mdi-eye"></i></a>
+                        </td>
+                      </tr>
+                    <% }); %>
+                  </tbody>
+                </table>
+              </div>
+
+              <hr>
+
+              <!-- Documents Section -->
+              <div class="d-flex justify-content-between align-items-center">
+                <h5>Radiologist Documents</h5>
+                <a href="/pages-radiologist-add-documents" class="btn btn-primary btn-sm">Add Documents</a>
+              </div>
+
+              <div class="table-responsive mt-3">
+                <table class="table table-striped table-bordered">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Document Name</th>
+                      <th>Status</th>
+                      <th>Expiry Date</th>
+                      <th>Verification Result</th>
+                      <th>Admin/Reviewer Remarks</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% const documents = [
+                      { name: 'Medical Degree Certificate', status: 'Pending', expiry: 'N/A', result: 'Not Verified', remark: 'Awaiting Upload' },
+                      { name: 'Radiology License', status: 'Uploaded', expiry: '2027-05-30', result: 'Under Review', remark: 'Expiry within 2 years' },
+                      { name: 'Government ID', status: 'Uploaded', expiry: '2030-12-01', result: 'Verified', remark: 'Verified by Admin' },
+                      { name: 'Profile Picture', status: 'Uploaded', expiry: 'N/A', result: 'Verified', remark: 'Meets requirements' }
+                    ]; %>
+                    <% documents.forEach(doc => { %>
+                      <tr>
+                        <td><%= doc.name %></td>
+                        <td><%= doc.status %></td>
+                        <td><%= doc.expiry %></td>
+                        <td class="<%= doc.result === 'Verified' ? 'text-success' : doc.result === 'Under Review' ? 'text-warning' : 'text-danger' %>">
+                          <%= doc.result %>
+                        </td>
+                        <td><%= doc.remark %></td>
+                        <td><a href="pages-radiologist-view-documents" class="text-secondary"><i class="mdi mdi-eye"></i></a></td>
+                      </tr>
+                    <% }); %>
+                  </tbody>
+                </table>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- container-fluid -->
+</div> <!-- content -->
+
+<%- contentFor('FooterJs') %>
+
+<!-- Optional: Add custom CSS -->
+<style>
+  .form-control {
+    font-size: 14px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+  }
+
+  .page-title-box {
+    padding-right: 30px;
+  }
+
+  .form-check-input {
+    width: 40px;
+    height: 20px;
+  }
+
+  .form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Adjust layout for two columns */
+  .col-md-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .mb-3 {
+    margin-bottom: 1rem;
+  }
+
+  .text-end {
+    margin-right: 10px;
+  }
+</style>

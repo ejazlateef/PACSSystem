@@ -1,0 +1,65 @@
+<% include ../Partials/HeaderRoot %>
+
+<div class="wrapper-page"
+    style="background-image: url('http://202.141.232.117:88/assets/hilton_repl/images/motto-bg.jpeg');
+           background-size: cover; background-position: center;">
+
+    <div class="card">
+        <div class="card-body">
+
+            <!-- Logo Header -->
+            <h3 class="text-center m-0 mb-3">
+                <a href="/" class="logo logo-admin d-flex align-items-center justify-content-center">
+                    <i class="mdi mdi-hospital-building" style="color: red; font-size: 40px; margin-right: 8px;"></i>
+                    <span style="font-weight: bold; font-size: 32px; color: #333;">ITS</span>
+                </a>
+            </h3>
+
+            <!-- Title -->
+            <h4 class="text-center mb-4">Radiologist Verification</h4>
+
+            <p class="text-muted text-center mb-4">
+                Enter the 6-digit OTP sent to your registered email or phone.
+            </p>
+
+            <!-- OTP Form -->
+            <form action="/pages-radiologist-list" method="POST" class="text-center">
+                <div class="d-flex justify-content-center mb-4">
+                    <% for(let i = 0; i < 6; i++) { %>
+                        <input type="text" name="otp[]" maxlength="1" 
+                            class="form-control text-center mx-1"
+                            style="width: 45px; height: 50px; font-size: 22px; border-radius: 8px;" required>
+                    <% } %>
+                </div>
+
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-primary btn-block w-100" onclick="window.location.href='/pages-radiologist-list'">
+    Verify OTP
+</button>
+
+                </div>
+
+                <div class="form-group text-center">
+                    <a href="/request-new-otp" class="text-primary" style="text-decoration: none;">
+                        Request New OTP
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Auto focus next input
+    document.querySelectorAll('input[name="otp[]"]').forEach((input, index, arr) => {
+        input.addEventListener('input', () => {
+            if (input.value.length === 1 && index < arr.length - 1) arr[index + 1].focus();
+        });
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Backspace' && !input.value && index > 0) arr[index - 1].focus();
+        });
+    });
+</script>
+
+<% include ../Partials/FooterRoot %>
