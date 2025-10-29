@@ -293,6 +293,12 @@ router.get('/pages-platform-admin-portal', function (req, res) {
     res.locals = {  title: 'pages-user-rights' };
     res.render('Users/user_rights');
     });
+    router.get('/pages-user-add-form', function (req, res) {
+    res.locals = {  title: 'pages-user-add-form' };
+    res.render('Users/user_add_form');
+    });
+
+    
 
 
     
