@@ -187,11 +187,26 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Plan Expiry Date</label>
-                  <input type="date" name="plan_expiry_date" class="form-control">
-                </div>
-              </div>
+  <!-- Plan Expiry Date -->
+  <div class="col-md-6 mb-3">
+    <label class="form-label">Plan Expiry Date</label>
+    <input type="date" name="plan_expiry_date" class="form-control">
+  </div>
+
+  <!-- Active Toggle Switch -->
+  <div class="col-md-6 mb-3">
+    <br>
+    
+  <div class="form-check d-flex align-items-center">
+    <!-- Switch Input -->
+    <input class="form-check-input me-2" type="checkbox" id="switchActive" switch="none" checked />
+    <!-- Switch Label (On/Off) -->
+    <label for="switchActive" data-on-label="On" data-off-label="Off" class="form-check-label"></label>
+    <!-- Text Label -->
+    <label class="form-label ms-2">Active</label> <!-- Added margin to space it from the switch -->
+  </div>
+</div>
+
 
               
             </form>

@@ -127,15 +127,36 @@
                             </li>
 
                             <li>
-                                <a href="javascript:void(0);" class="waves-effect">  <i class="mdi mdi-pharmacy" style="color: blue;"></i>  <span> Radiologist  <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
-                                <ul class="submenu">
-                                    <li><a href="pages-radiologist-list"> Dashboard List</a></li> 
-                                    <li><a href="pages-radiologist-add-experience"> Add experience</a></li>                                    
-                                     <li><a href="pages-radiologist-add-documents"> Add documents</a></li> 
-                                     <li><a href="pages-radiologist-view-documents"> View documents</a></li>                            
-                                </ul>
-                            </li>
+    <a href="javascript:void(0);" class="waves-effect">
+        <i class="mdi mdi-hospital-building" style="color: blue;"></i>
+        <span> Hospital Admin 
+            <span class="float-right menu-arrow">
+                <i class="mdi mdi-chevron-right"></i>
+            </span>
+        </span>
+    </a>
+    <ul class="submenu">
+        <!-- Dashboard for Hospital Admin -->
+        <li><a href="pages-hospital-admin-dashboard">Dashboard</a></li>
 
+        <!-- Manage Radiologists (Hospital Admin can add/edit radiologists) -->
+        <li><a href="pages-hospital-admin-manage-radiologists">Manage Radiologists</a></li>
+        
+        <!-- Assign Roles and Permissions for Radiologists or Admins -->
+        <li><a href="pages-hospital-admin-assign-roles">Assign Roles & Permissions</a></li>
+
+        <!-- Hospital Settings (Manage hospital info, address, contact) -->
+        <li><a href="pages-hospital-admin-settings">Hospital Settings</a></li>
+
+        <!-- Manage Documents -->
+        <li><a href="pages-hospital-admin-manage-documents">Manage Documents</a></li>
+
+        <!-- Manage Users (Hospital Admin can add new staff, set permissions) -->
+        <li><a href="pages-hospital-admin-manage-users">Manage Users</a></li>
+    </ul>
+</li>
+
+<li> <a href="javascript:void(0);" class="waves-effect"> <i class="mdi mdi-pharmacy" style="color: blue;"></i> <span> Radiologist <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a> <ul class="submenu"> <li><a href="pages-radiologist-list"> Dashboard List</a></li> <li><a href="pages-radiologist-add-experience"> Add experience</a></li> <li><a href="pages-radiologist-add-documents"> Add documents</a></li> <li><a href="pages-radiologist-view-documents"> View documents</a></li> </ul> </li>
                             <li>
                                 <a href="javascript:void(0);" class="waves-effect">  <i class="mdi mdi-account-key" style="color: green;"></i>   <span> Admin  <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
 
@@ -157,9 +178,14 @@
                                 </ul>
                             </li>
                            <li>
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-bank" style="color: rgb(4, 229, 245);"></i><span> Platform  <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-bank" style="color: rgb(4, 229, 245);"></i><span> Platform (Tenant)  <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                                 <ul class="submenu">
-                                    <li><a href="pages-platform-admin-portal"> Admin Portal</a></li> 
+                                    <li><a href="pages-platform-admin-portal">Tenant Portal</a></li> 
+                                    <li><a href="pages-tenant-user-management">User Management</a></li>
+                                    <li><a href="pages-tenant-user-add"> Add User</a></li> 
+                                    <li><a href="pages-tenant-user-rights"> User Rights</a></li>
+                                                                        
+                                   
                                     
                                                                
                                 </ul>

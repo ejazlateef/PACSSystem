@@ -276,8 +276,26 @@ router.get('/sample-blank', function (req, res) {
     });
 router.get('/pages-platform-admin-portal', function (req, res) {
     res.locals = {  title: 'pages-platform-admin-portal' };
-    res.render('Platform/platform_admin_portal');
+    res.render('Tenant/tenant_portal');
     });
+router.get('/pages-tenant-user-management', function (req, res) {
+    res.locals = {  title: 'pages-tenant-user-management' };
+    res.render('Tenant/tenant_user_management');
+    });
+    router.get('/pages-tenant-user-add', function (req, res) {
+    res.locals = {  title: 'pages-tenant-user-add' };
+    res.render('Tenant/tenant_user_add');
+    });
+
+    router.get('/pages-tenant-user-rights', function (req, res) {
+      res.locals = {  title: 'pages-tenant-user-rights' };
+    res.render('Tenant/tenant_user_rights');
+    });  
+    
+
+    
+
+     
 
     router.get('/pages-user-management', function (req, res) {
     res.locals = {  title: 'pages-user-management' };
