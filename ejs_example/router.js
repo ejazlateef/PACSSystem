@@ -319,6 +319,18 @@ router.get('/pages-tenant-user-management', function (req, res) {
     res.locals = {  title: 'pages-healthcare-facility-list' };
     res.render('Healthcare/healthcare_facility_list');
     });
+router.get('/pages-healthcare-facility-add', function (req, res) {
+    res.locals = {  title: 'pages-healthcare-facility-add' };
+    res.render('Healthcare/healthcare_facility_add');
+    });
+router.get('/pages-healthcare_facility_view', function (req, res) {
+    res.locals = {  title: 'pages-healthcare_facility_view' };
+    res.render('Healthcare/healthcare_facility_view');
+    });
+
+    
+
+    
 
     
 
