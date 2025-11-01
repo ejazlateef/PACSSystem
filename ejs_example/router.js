@@ -293,9 +293,7 @@ router.get('/pages-tenant-user-management', function (req, res) {
     });  
     
 
-    
-
-     
+       
 
     router.get('/pages-user-management', function (req, res) {
     res.locals = {  title: 'pages-user-management' };
@@ -307,13 +305,19 @@ router.get('/pages-tenant-user-management', function (req, res) {
     res.locals = {  title: 'pages-user-add' };
     res.render('Users/user_add');
     });
- router.get('/pages-user-rights', function (req, res) {
+    router.get('/pages-user-rights', function (req, res) {
     res.locals = {  title: 'pages-user-rights' };
     res.render('Users/user_rights');
     });
     router.get('/pages-user-add-form', function (req, res) {
     res.locals = {  title: 'pages-user-add-form' };
     res.render('Users/user_add_form');
+    });
+
+
+    router.get('/pages-healthcare-facility-list', function (req, res) {
+    res.locals = {  title: 'pages-healthcare-facility-list' };
+    res.render('Healthcare/healthcare_facility_list');
     });
 
     

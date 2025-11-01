@@ -1,0 +1,154 @@
+<%- contentFor('HeaderCss') %>
+    <!-- Page-specific CSS -->
+
+    <%- contentFor('body') %>
+
+        <!-- Start content -->
+        <% include ../Partials/HeaderRoot %>
+
+            <div class="content">
+                <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title" style="display: inline-block;">View Rights</h4>
+                                <!-- Add Button at the top right -->
+                                <div style="display: inline-block; float: right;">
+                                    <a href="pages-user-add-form">
+                                        <button type="button" class="btn btn-primary w-100">Add Form</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table for User Rights -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card m-b-20">
+                                <div class="card-body">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Healthcare</th>
+                                                <th>Contact Person</th>
+                                                <th>Contact #</th>
+                                                <th>Contact Email</th>
+                                                <th>Valid Till</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Abbassi Shaheed</td>
+                                                <td>Areeb Khan</td>
+                                                <td>+92212002137</td>
+                                                <td>Areeb@gmail.com</td>
+                                                <td>2022-01-10</td>
+                                                <td>enabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Aga Khan</td>
+                                                <td>Baber Ali</td>
+                                                <td>+92211121100</td>
+                                                <td>anblab@gmail.com</td>
+                                                <td>2022-02-10</td>
+                                                <td>enabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Burhani Hospital</td>
+                                                <td>Dilwar Ahmed</td>
+                                                <td>+92212221111</td>
+                                                <td>Dilwar@gmail.com</td>
+                                                <td>2022-03-10</td>
+                                                <td>enabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dr. Ziauddin Hospital</td>
+                                                <td>Ejaz Khan</td>
+                                                <td>+9221233122</td>
+                                                <td>ejaz@gmail.com</td>
+                                                <td>2022-04-10</td>
+                                                <td>enabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Holy Family</td>
+                                                <td>Fayyaz Ali</td>
+                                                <td>+92212244133</td>
+                                                <td>fayaz@gmail.com</td>
+                                                <td>2022-05-10</td>
+                                                <td>enabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Liaquat National</td>
+                                                <td>Furrukh Manzoor</td>
+                                                <td>+92212244414</td>
+                                                <td>fkhnna@gmail.com</td>
+                                                <td>2022-06-10</td>
+                                                <td>enabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>PNS Rahat</td>
+                                                <td>Gulam Ali</td>
+                                                <td>+92212255155</td>
+                                                <td>gulam@hotmail.com</td>
+                                                <td>2022-07-10</td>
+                                                <td>blocked</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>PNS Shifa</td>
+                                                <td>Mustifa Maher</td>
+                                                <td>+92212266166</td>
+                                                <td>mustifa@gmail.com</td>
+                                                <td>2022-08-10</td>
+                                                <td>enabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Indus Hospital</td>
+                                                <td>Nasir Khan</td>
+                                                <td>+92212277717</td>
+                                                <td>nasir@gmail.com</td>
+                                                <td>2022-09-10</td>
+                                                <td>disabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Saifee Hospital</td>
+                                                <td>Rizwan Awan</td>
+                                                <td>+92212288188</td>
+                                                <td>rizwan@gmail.com</td>
+                                                <td>2022-10-10</td>
+                                                <td>disabled</td>
+                                                <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <!-- Pagination -->
+                                    <div class="d-flex justify-content-between">
+                                        <p>Total records: 10</p>
+                                        <div class="pagination">
+                                            <!-- Add pagination buttons here if needed -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <%- contentFor('FooterJs') %>
