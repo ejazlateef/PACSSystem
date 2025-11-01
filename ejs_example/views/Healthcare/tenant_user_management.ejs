@@ -1,0 +1,108 @@
+<%- contentFor('HeaderCss') %>
+  <!-- Page-specific CSS -->
+
+  <%- contentFor('body') %>
+
+    <!-- Start content -->
+    <% include ../Partials/HeaderRoot %>
+      <div class="content">
+        <div class="container-fluid">
+
+          <!-- Page Title -->
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <h4 class="page-title" style="display: inline-block;">User List</h4>
+                <!-- Save button at the top right -->
+                <div style="display: inline-block; float: right;">
+                  <button type="button" class="btn btn-primary w-100"
+                    onclick="window.location.href='pages-tenant-user-add'">Add User</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Table -->
+          <div class="row">
+            <div class="col-12">
+              <div class="card m-b-20">
+                <div class="card-body">
+                  <table class="table table-striped table-bordered">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>Name</th>
+                        <th>Hospital Name</th> <!-- Added Hospital Name column -->
+                        <th>Role</th>
+                        <th>Contact #</th>
+                        <th>Whatsapp #</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Muhammad Areeb Khan</td>
+                        <td>Agha Khan University Hospital</td> <!-- Realistic Hospital Name -->
+                        <td>
+                          <a href="#" class="btn btn-info btn-sm" onclick="window.location.href='pages-user-rights'"
+                            style="background-color: black; color: white;">Hospital</a>
+                        </td>
+                        <td>+92212002137</td>
+                        <td>+92212002137</td>
+                        <td>M.Areeb@gmail.com</td>
+                        <td>enabled</td>
+                        <td>
+                          <a href="#" class="btn btn-info btn-sm">View</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Syed Baber Ali</td>
+                        <td>NMC Hospital</td> <!-- Realistic Hospital Name -->
+                        <td>
+                          <a href="#" class="btn btn-info btn-sm" onclick="window.location.href='pages-user-rights'"
+                            style="background-color: black; color: white;">Hospital</a>
+                        </td>
+                        <td>+92211121100</td>
+                        <td>+92211121100</td>
+                        <td>s.anblab@gmail.com</td>
+                        <td>enabled</td>
+                        <td>
+                          <a href="#" class="btn btn-info btn-sm">View</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Dilwar Ahmed</td>
+                        <td>Liqat National Hospital</td> <!-- Realistic Hospital Name -->
+                        <td>
+                          <a href="#" class="btn btn-info btn-sm" onclick="window.location.href='pages-user-rights'"
+                            style="background-color: black; color: white;">Hospital</a>
+                        </td>
+                        <td>+92212222111</td>
+                        <td>+92212222111</td>
+                        <td>Dilwar@gmail.com</td>
+                        <td>enabled</td>
+                        <td>
+                          <a href="#" class="btn btn-info btn-sm">View</a>
+                        </td>
+                      </tr>
+                      <!-- Add other rows here -->
+                    </tbody>
+                  </table>
+
+                  <!-- Pagination -->
+                  <div class="d-flex justify-content-between">
+                    <p>Total records: 10</p>
+                    <div class="pagination">
+                      <!-- Add pagination buttons here if needed -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <%- contentFor('FooterJs') %>
