@@ -318,6 +318,29 @@ router.get('/pages-healthcare_facility_view', function (req, res) {
     res.locals = { title: 'pages-healthcare_facility_view' };
     res.render('Healthcare/healthcare_facility_view');
 });
+router.get('/pages-healthcare-user-management', function (req, res) {
+    res.locals = { title: 'pages-healthcare-user-management' };
+    res.render('Healthcare/healthcare_user_management');
+});
+router.get('/pages-healthcare-user-add-form', function (req, res) {
+    res.locals = { title: 'pages-healthcare-user-add-form' };
+    res.render('Healthcare/healthcare_user_add_form');
+});
+
+router.get('/pages-healthcare-user-add', function (req, res) {
+    res.locals = { title: 'pages-healthcare-user-add' };
+    res.render('Healthcare/healthcare_user_add');
+});
+router.get('/pages-healthcare-user-add-form', function (req, res) {
+    res.locals = { title: 'pages-healthcare-user-add-form' };
+    res.render('Healthcare/healthcare_user_add_form');
+});
+router.get('/pages-healthcare-user-rights', function (req, res) {
+    res.locals = { title: 'pages-healthcare-user-rights' };
+    res.render('Healthcare/healthcare_user_rights');
+});
+
+
 
 
 
