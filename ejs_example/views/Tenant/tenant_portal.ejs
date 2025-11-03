@@ -9,16 +9,15 @@
 <div class="content">
   <div class="container-fluid">
 
-    
     <div class="row">
       <div class="col-sm-12">
         <div class="page-title-box">
           <h4 class="page-title" style="display: inline-block;">Add Tenant (Organization / Hospital)</h4>
           <!-- Save button at the top right -->
           <div style="display: inline-block; float: right;">
-            <button type="submit" class="btn btn-primary w-100">Save</button>
+            <!-- Wire this button to the form below -->
+            <button type="submit" class="btn btn-primary w-100" form="tenantForm">Save</button>
           </div>
-          
         </div>
       </div>
     </div>
@@ -29,7 +28,7 @@
         <div class="card m-b-20">
           <div class="card-body">
 
-            <form action="/tenant/save" method="POST">
+            <form id="tenantForm" action="/tenant/save" method="POST">
               <!-- General Info -->
               <h5 class="mb-3">General Information</h5>
               <div class="row">
@@ -39,22 +38,20 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Tenant Code <span class="text-danger">*</span></label>
-                  <input type="text" name="tenant_code" class="form-control" placeholder="HILTON123" required>
+                  <input type="text" name="tenant_code" class="form-control" placeholder="ABC-123" required>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-6 mb-3">
-  <label class="form-label">Industry Type <span class="text-danger">*</span></label>
-  <select name="industry_type" class="form-select form-control" multiple="multiple" required>
-    <option value="Radiology">Radiology</option>
-    <option value="Hospital">Hospital</option>
-    <option value="Diagnostic Center">Diagnostic Center</option>
-    <option value="Clinic">Clinic</option>
-</select>
-
-</div>
-
-
+                  <label class="form-label">Industry Type <span class="text-danger">*</span></label>
+                  <select name="industry_type" class="form-select form-control" multiple="multiple" required>
+                    <option value="Radiology">Radiology</option>
+                    <option value="Hospital">Hospital</option>
+                    <option value="Diagnostic Center">Diagnostic Center</option>
+                    <option value="Clinic">Clinic</option>
+                  </select>
+                </div>
 
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Website</label>
@@ -160,6 +157,21 @@
                 </div>
               </div>
 
+              <!-- NEW: User Rights / Modules -->
+              <h5 class="mb-3 mt-4">User Rights (Modules)</h5>
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label class="form-label">Select Modules <span class="text-danger">*</span></label>
+                  <select name="user_rights[]" class="form-select form-control" multiple="multiple" required>
+                    <option value="Admin Setup">Admin Setup</option>
+                    <option value="Radiology">Radiology</option>
+                    <option value="Reviewer">Reviewer</option>
+                    <option value="Hospital Setup">Hospital Setup</option>
+                  </select>
+                  <small class="text-muted">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</small>
+                </div>
+              </div>
+
               <!-- Subscription -->
               <h5 class="mb-3 mt-4">Subscription / License</h5>
               <div class="row">
@@ -186,29 +198,28 @@
                   <input type="date" name="plan_start_date" class="form-control">
                 </div>
               </div>
+
               <div class="row">
-  <!-- Plan Expiry Date -->
-  <div class="col-md-6 mb-3">
-    <label class="form-label">Plan Expiry Date</label>
-    <input type="date" name="plan_expiry_date" class="form-control">
-  </div>
+                <!-- Plan Expiry Date -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Plan Expiry Date</label>
+                  <input type="date" name="plan_expiry_date" class="form-control">
+                </div>
 
-  <!-- Active Toggle Switch -->
-  <div class="col-md-6 mb-3">
-    <br>
-    
-  <div class="form-check d-flex align-items-center">
-    <!-- Switch Input -->
-    <input class="form-check-input me-2" type="checkbox" id="switchActive" switch="none" checked />
-    <!-- Switch Label (On/Off) -->
-    <label for="switchActive" data-on-label="On" data-off-label="Off" class="form-check-label"></label>
-    <!-- Text Label -->
-    <label class="form-label ms-2">Active</label> <!-- Added margin to space it from the switch -->
-  </div>
-</div>
+                <!-- Active Toggle Switch -->
+                <div class="col-md-6 mb-3">
+                  <br>
+                  <div class="form-check d-flex align-items-center">
+                    <!-- Switch Input -->
+                    <input class="form-check-input me-2" type="checkbox" id="switchActive" switch="none" checked />
+                    <!-- Switch Label (On/Off) -->
+                    <label for="switchActive" data-on-label="On" data-off-label="Off" class="form-check-label"></label>
+                    <!-- Text Label -->
+                    <label class="form-label ms-2">Active</label>
+                  </div>
+                </div>
+              </div>
 
-
-              
             </form>
 
           </div>
@@ -219,6 +230,4 @@
   </div>
 </div>
 
-
-
-<%- contentFor('FooterJs') %> 
+<%- contentFor('FooterJs') %>
