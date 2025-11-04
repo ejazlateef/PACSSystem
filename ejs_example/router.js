@@ -277,10 +277,7 @@ router.get('/pages-reviewer-process-list', function (req, res) {
     res.locals = { title: 'pages-reviewer-process-list' };
     res.render('Reviewer/reviewer_process_list');
 });
-router.get('/pages-platform-admin-portal', function (req, res) {
-    res.locals = { title: 'pages-platform-admin-portal' };
-    res.render('Tenant/tenant_portal');
-});
+
 router.get('/pages-tenant-user-management', function (req, res) {
     res.locals = { title: 'pages-tenant-user-management' };
     res.render('Tenant/tenant_user_management');
@@ -342,7 +339,15 @@ router.get('/pages-healthcare-user-rights', function (req, res) {
 
 
 
+router.get('/pages-platform-admin-portal', function (req, res) {
+    res.locals = { title: 'pages-platform-admin-portal' };
+    res.render('SuperTenant/tenant_portal');
+});
 
+router.get('/pages-super-tenant-registration', function (req, res) {
+    res.locals = { title: 'super-tenant-registration' };
+    res.render('SuperTenant/super_tenant_registration');
+});
 
 
 
