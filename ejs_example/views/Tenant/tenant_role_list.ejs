@@ -1,0 +1,105 @@
+<%- contentFor('HeaderCss') %>
+  <!-- Page-specific CSS -->
+
+  <%- contentFor('body') %>
+
+    <!-- Start content -->
+    <% include ../Partials/HeaderRoot %>
+
+      <div class="content">
+        <div class="container-fluid">
+
+          <!-- Page Title -->
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <h4 class="page-title" style="display: inline-block;">Role Lists</h4>
+                <!-- Save button at the top right -->
+                <div style="display: inline-block; float: right;">
+                  <button type="button" class="btn btn-primary w-100"
+                    onclick="window.location.href='pages-tenant-user-rights-add'">Add </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card m-b-20">
+            <div class="card-body">
+              <h5 class="mb-4">List of User Roles</h5>
+
+              <!-- Table to display user roles -->
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Roles</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Dummy Data for User Roles -->
+                  <tr>
+                    <td>Tenant Administrator</td>
+                    <td>enabled</td>
+                    <td><a href="pages-tenant-user-rights" class="btn btn-info btn-sm">View</a>
+                      <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
+                      <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tenant Supervisor</td>
+
+                    <td>enabled</td>
+                    <td><a href="pages-tenant-user-rights" class="btn btn-info btn-sm">View</a>
+                      <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
+                      <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Radiologist</td>
+
+                    <td>enabled</td>
+                    <td><a href="pages-tenant-user-rights" class="btn btn-info btn-sm">View</a>
+                      <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
+                      <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hospital</td>
+
+                    <td>enabled</td>
+                    <td><a href="pages-tenant-user-rights" class="btn btn-info btn-sm">View</a>
+                      <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
+                      <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Reviewer</td>
+
+                    <td>enabled</td>
+                    <td><a href="pages-tenant-user-rights" class="btn btn-info btn-sm">View</a>
+                      <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
+                      <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Reports</td>
+
+                    <td>enabled</td>
+                    <td><a href="pages-tenant-user-rights" class="btn btn-info btn-sm">View</a>
+                      <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
+                      <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                  </tr>
+
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <%- contentFor('FooterJs') %>

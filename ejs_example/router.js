@@ -298,6 +298,20 @@ router.get('/pages-tenant-user-add-form', function (req, res) {
     res.render('Tenant/tenant_user_add_form');
 });
 
+router.get('/pages-tenant-role-list', function (req, res) {
+    res.locals = { title: 'pages-tenant-role-list' };
+    res.render('Tenant/tenant_role_list');
+});
+
+
+router.get('/pages-tenant-user-rights-add', function (req, res) {
+    res.locals = { title: 'pages-tenant-user-rights-add' };
+    res.render('Tenant/tenant_user_rights_add');
+});
+
+
+
+
 
 
 
@@ -344,10 +358,14 @@ router.get('/pages-platform-admin-portal', function (req, res) {
     res.render('SuperTenant/tenant_portal');
 });
 
-router.get('/pages-super-tenant-registration', function (req, res) {
-    res.locals = { title: 'super-tenant-registration' };
-    res.render('SuperTenant/super_tenant_registration');
+router.get('/pages-tenant-list', function (req, res) {
+    res.locals = { title: 'pages-tenant-list' };
+    res.render('SuperTenant/tenant_list');
 });
+
+
+
+
 
 
 
