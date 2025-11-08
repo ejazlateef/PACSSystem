@@ -1,15 +1,15 @@
 <%- contentFor('HeaderCss') %>
-<!-- Page-specific CSS -->
+  <!-- Page-specific CSS -->
 
-<%- contentFor('body') %>
+  <%- contentFor('body') %>
 
-<!-- Start content -->
-<% include ../Partials/HeaderRoot %>
+    <!-- Start content -->
+    <% include ../Partials/HeaderRoot %>
 
-<div class="content">
-  <div class="container-fluid">
+      <div class="content">
+        <div class="container-fluid">
 
-    <!-- Page Title -->
+          <!-- Page Title -->
           <div class="row">
             <div class="col-sm-12">
               <div class="page-title-box">
@@ -23,51 +23,59 @@
             </div>
           </div>
 
-   
-    <div class="card m-b-20">
-      <div class="card-body">
-        <h5 class="mb-4">List of Tenants</h5>
 
-        <!-- Table to display tenants -->
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th>Tenant Name</th>
-              <th>Tenant Code</th>
-              <th>Industry Type</th>
-              <th>Contact Email</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Dummy data for tenants -->
-            <% const tenants = [
-              { tenant_name: 'ABC Hospital', tenant_code: 'ABC-123', industry_type: 'Hospital', contact_email: 'contact@abc.com' },
-              { tenant_name: 'XYZ Medical Center', tenant_code: 'XYZ-456', industry_type: 'Radiology', contact_email: 'contact@xyz.com' },
-              { tenant_name: 'LMN Diagnostic Center', tenant_code: 'LMN-789', industry_type: 'Diagnostic Center', contact_email: 'contact@lmn.com' }
-            ]; %>
+          <div class="card m-b-20">
+            <div class="card-body">
+              <h5 class="mb-4">List of Tenants</h5>
 
-            <!-- Loop through dummy tenant data and display it in the table -->
-            <% tenants.forEach(tenant => { %>
-              <tr>
-                <td><%= tenant.tenant_name %></td>
-                <td><%= tenant.tenant_code %></td>
-                <td><%= tenant.industry_type %></td>
-                <td><%= tenant.contact_email %></td>
-                <td>
-                  <!-- Action button: View -->
-                  <a href="pages-platform-admin-portal" class="btn btn-info btn-sm">View</a>
-                  <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
-                  <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
-                </td>
-              </tr>
-            <% }) %>
-          </tbody>
-        </table>
+              <!-- Table to display tenants -->
+              <table class="table table-striped table-bordered">
+                <thead class="thead-light">
+                  <tr>
+                    <th>Tenant Name</th>
+                    <th>Tenant Code</th>
+                    <th>Industry Type</th>
+                    <th>Contact Email</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Dummy data for tenants -->
+                  <% const tenants=[ { tenant_name: 'ABC Hospital' , tenant_code: 'ABC-123' , industry_type: 'Hospital'
+                    , contact_email: 'contact@abc.com' }, { tenant_name: 'XYZ Medical Center' , tenant_code: 'XYZ-456' ,
+                    industry_type: 'Radiology' , contact_email: 'contact@xyz.com' }, {
+                    tenant_name: 'LMN Diagnostic Center' , tenant_code: 'LMN-789' , industry_type: 'Diagnostic Center' ,
+                    contact_email: 'contact@lmn.com' } ]; %>
+
+                    <!-- Loop through dummy tenant data and display it in the table -->
+                    <% tenants.forEach(tenant=> { %>
+                      <tr>
+                        <td>
+                          <%= tenant.tenant_name %>
+                        </td>
+                        <td>
+                          <%= tenant.tenant_code %>
+                        </td>
+                        <td>
+                          <%= tenant.industry_type %>
+                        </td>
+                        <td>
+                          <%= tenant.contact_email %>
+                        </td>
+                        <td>
+                          <!-- Action button: View -->
+                          <a href="pages-platform-admin-portal" class="btn btn-info btn-sm">View</a>
+                          <a href="javascript:void(0);" class="btn btn-info btn-sm">Edit</a>
+                          <a href="javascript:void(0);" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                      </tr>
+                      <% }) %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
 
-  </div>
-</div>
-
-<%- contentFor('FooterJs') %>
+      <%- contentFor('FooterJs') %>
