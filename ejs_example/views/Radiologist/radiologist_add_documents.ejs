@@ -1,106 +1,93 @@
 <%- contentFor('HeaderCss') %>
-            <!-- perticular page css -->
-              
-            
-            <%- contentFor('body') %>
-			
- <!-- Start content -->
- <div class="content">
+<!-- particular page css -->
+<!-- Dropzone css -->
+<link href="public/plugins/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css">
+
+<%- contentFor('body') %>
+<!-- Start content -->
+<div class="content">
   <div class="container-fluid">
 
-    <!-- Page Title -->
+    <!-- Page Title with Save Button -->
     
-<!-- Page Title with Save Button -->
-    
+    </div>
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <h4 class="page-title" style="display: inline-block;">Add Radiologist Documents</h4>
+                <!-- Save button at the top right -->
+                <div style="display: inline-block; float: right;">
+                    <button type="submit" class="btn btn-primary w-100">Save</button>
+                </div>
+            </div>
+        </div>
 
 
+        <!-- Main Form Section -->
     <div class="row">
-      <div class="col-sm-12">
-        <div class="page-title-box">
-          <h4 class="page-title" style="display: inline-block;">Add Radiologist Documents</h4>
-          <!-- Save button at the top right -->
-          <div style="display: inline-block; float: right;">
-            <button type="submit" class="btn btn-primary w-100">Save</button>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-    <!-- Form Section -->
-    <div class="row justify-content-center">
-      <div class="col-md-12">
-        <div class="card">
+      <div class="col-12">
+        <div class="card m-b-20">
           <div class="card-body">
+         
 
-            <form id="radiologistDocForm">
-
-              <!-- Document Name -->
-              <div class="row mb-3">
-                <div class="col-md-6">
-                  <label class="form-label">Document Name <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" value="Medical Degree Certificate" required>
+        <!-- Row 1: Document fields -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Document Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" value="Medical Degree Certificate" required>
                 </div>
+            </div>
 
-                <!-- Multi File Upload with Drop Zone -->
-                <div class="col-md-6">
-                  <label class="form-label">Multi File Uploaded <span class="text-danger">*</span></label>
-                  <div class="input-group">
-                    <div id="dropzone" class="dropzone form-control" style="min-height: 100px; border: 2px dashed #007bff; padding: 10px;">
-                      Drag & Drop files here or click to upload
+            <!-- Expiry Date -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Expiry Date</label>
+                    <div class="input-group">
+                        <input type="date" class="form-control" value="2020-01-01">
+                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                     </div>
-                    <button class="btn btn-outline-secondary mt-2" type="button" id="createDropzone">
-                      <i class="mdi mdi-upload"></i>
-                    </button>
-                  </div>
-                  <small><a href="#" id="createDropzoneLink">Create Multi Dropzone</a></small>
                 </div>
-              </div>
+            </div>
+        </div>
 
-              <!-- Expiry Date -->
-              <div class="row mb-3">
-                <div class="col-md-6">
-                  <label class="form-label">Expiry Date</label>
-                  <div class="input-group">
-                    <input type="date" class="form-control" value="2020-01-01">
-                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                  </div>
+        <!-- Row 2: Remarks and Dropzone -->
+        <div class="row">
+            <!-- Remarks -->
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Remarks</label>
+                    <input type="text" class="form-control" value="Plz view my doc">
                 </div>
-              </div>
+            </div>
 
-              <!-- Remarks -->
-              <div class="mb-3">
-                <label class="form-label">Remarks</label>
-                <input type="text" class="form-control" value="Plz view my doc">
-              </div>
+            <!-- Dropzone Section -->
+            <div class="col-md-6">
+                <h4 class="mt-0 header-title">Upload Multiple Files here</h4>
+                <p class="text-muted m-b-30">The format should be PNG, JPG, PDF, or DOCX, and the size should be less than 20 GB</p>
 
-              
+                <div class="m-b-30">
+                    <form action="#" class="dropzone">
+                        <div class="fallback">
+                            <input name="file" type="file" multiple="multiple">
+                        </div>
+                    </form>
+                </div>
 
-            </form>
+                <div class="text-center m-t-15">
+                    <button type="button" class="btn btn-primary waves-effect waves-light">Send Files</button>
+                </div>
+            </div>
+        </div>
 
+        
           </div>
         </div>
       </div>
     </div>
 
-  </div>
-</div>
+</div> <!-- content -->
+
 <%- contentFor('FooterJs') %>
 
-<!-- Dropzone JS CDN link -->
-<script src="https://cdn.jsdelivr.net/npm/dropzone@5.7.0/dist/min/dropzone.min.js"></script>
-<script>
-  // Initialize Dropzone
-  Dropzone.autoDiscover = false;
-  var myDropzone = new Dropzone("#dropzone", {
-    url: "/upload",
-    autoProcessQueue: false,
-    addRemoveLinks: true,
-    maxFiles: 5,
-    dictDefaultMessage: "Drag & Drop files here or click to upload"
-  });
-
-  // Handle button for creating multi drop zone
-  document.getElementById("createDropzoneLink").addEventListener("click", function() {
-    myDropzone.emit("click");
-  });
-</script>
+<!-- Dropzone js -->
+<script src="public/plugins/dropzone/dist/dropzone.js"></script>
